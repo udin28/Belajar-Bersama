@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style 4.css">
+    <title>Install SSH  Server Debian 8</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>INSTALLASI SSH SERVER PADA LINUX DEBIAN 8</h1>
+        </header>
+        
+        <section class="steps">
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 1</h3>
+                    <p>Pastikan login menggunakan akun super user</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 2</h3>
+                    <p>Sebelum menginstall ssh server pastikan bahwa kalian telah mengupdate repository terlebih dahulu, untuk melihat apakah kalian sudah update atau belum ketikan perintah <code class="command">nano /etc/apt/sources.list</code> jika masih kosong silahkan update repository terlebih dahulu</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 3</h3>
+                    <p>Untuk menginstall SSH server kita gunakan perintah <code class="command">apt-get install openssh-server</code> ikuti prosesnya sampai installasi selesai</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 4</h3>
+                    <p>Setelah itu kita akan mengganti port pada SSH tersebut, dengan mengetikan perintah <code class="command">nano /etc/ssh/sshd_config</code> lalu ubah port dengan angka berapapun yang kalian inginkan</p>
+                </div>
+                <img src="port.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 5</h3>
+                    <p>Lalu setelah itu cari kalimat PermitRootLogin. gunakan <code class="command">Ctrl+w</code> lalu ketikan PermitRootLogin, setelah itu ubah kata without-password menjadi yes</p>
+                </div>
+                <img src="permit.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 6</h3>
+                    <p>Setelah itu kita akan merestart network dan ssh dengan cara</p>
+                    <p><code class="command">service networking restart</code></p>
+                    <p><code class="command">service ssh restart</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 7</h3>
+                    <p>Setelah di restart kita akan melakukan pengujian dengan menggunakan aplikasi putty</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 8</h3>
+                    <p>Buka aplikasi putty, lalu pada menu hostname masukan ip contoh <code class="command">192.168.0.2</code> pada menu port ubah port default ke port yang telah di konfigurasi tadi</p>
+                </div>
+                <img src="putty.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 9</h3>
+                    <p>Jika berhasil maka akan seperti gambar di bawah ini, kalian bisa login menggunakan username dan password kalian masing-masing</p>
+                </div>
+                <img src="dalem.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 10</h3>
+                    <p>Proses installasi dan konfigurasi SSH server telah selesai</p>
+                </div>
+            </div>
+        </section>
+
+        <button class="home-button" onclick="goHome()">Back To Materi</button>
+    </div>
+    <script src="script 2.js"></script>
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style 4.css">
+    <title>Installasi Web Server Debian 8</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>INSTALLASI WEB SERVER ( APACHE ) PADA LINUX DEBIAN 8</h1>
+        </header>
+        
+        <section class="steps">
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 1</h3>
+                    <p>Pastikan login menggunakan akun super user</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 2</h3>
+                    <p>Ketikan perintah <code class="command" >apt-get install apache2 php5 phpmyadmin mysql-server</code> untuk menginstall Apache2 , php5, phpmyadmin, mysql-server ikuti prosesnya sampai selesai</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 3</h3>
+                    <p>Setelah selesai masuk ke direktory /etc/apache2/sites-available kemudian copy file 000-default menjadi web.conf selanjutnya buka web.conf  </p>
+                    <p><code class="command">cd /etc/apache2/sites-available</code></p>
+                    <p><code class="command">cp 000-default.conf web.conf</code></p>
+                    <p><code class="command">nano web.conf</code></p></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 4</h3>
+                    <p>Selanjutnya tambahkan syntax di bawah ini</p>
+                </div>
+                <img src="web-conf.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 5</h3>
+                    <p>Lalu save dengan menekan <code class="command">Ctrl+x-y-ENTER</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 6</h3>
+                    <p>Setelah itu masuk ke direktory /var/www kemudian buat folder web</p>
+                    <p> <code class="command">cd /var/www</code></p>
+                    <p> <code class="command">mkdir web</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 7</h3>
+                    <p>Selanjutnya anda dapat memasukan halaman web yang anda miliki kedalam folder tersebut, sebenarna secara default sudah ada sebuah halaman web yang bernama index.htmldi dalam folder html. kali ini kita akan membuat sebuah file index.html pada folder web yang telah kita buat tadi</p>
+                    <p><code class="command">cd web</code></p>
+                    <p><code class="command">nano index.html</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 8</h3>
+                    <p>Setelah itu anda dapat mengedit file index.html sesui keinginan anda, contohnya seperti di bawah ini</p>
+                </div>
+                <img src="index gw.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 9</h3>
+                    <p>Jika sudah kita akan mematikan website 000-default.conf dan mengaktifkan konfigurasi website kita tadi yaitu web.conf</p>
+                    <p><code class="command">a2dissite 000-default.conf</code></p>
+                    <p><code class="command">a2ensite web.conf</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 10</h3>
+                    <p>Restart network dan apache2 dengan cara</p>
+                    <p><code class="command">service networking retart</code></p>
+                    <p><code class="command">service apache2 restart atau /etc/init.d/apache2 restart</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 11</h3>
+                    <p>Tes apakah web server sudah berjalan pada server debian dengan cara</p>
+                    <p><code class="command">w3m domain.com / w3m 192.168.0.2</code> jika sudah muncul halaman webnya maka web server telah berhasil</p>
+                </div>
+                <img src="pengujian 1.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 12</h3>
+                    <p>Masuk ke browser kemudian di address bar ketikan alamat domain / alamat ip kita</p>
+                </div>
+                <img src="pengujian 2.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 13</h3>
+                    <p>Proses installasi dan konfigurasi web server telah selesai</p>
+                </div>
+            </div>
+        </section>
+
+        <button class="home-button" onclick="goHome()">Back To Materi</button>
+    </div>
+    <script src="script 2.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: #000000;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.steps {
+    margin-top: 40px;
+}
+.step {
+    background-color: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.step img {
+    max-width: 100%;
+    height: auto;
+}
+
+.step-info {
+    padding: 20px;
+}
+
+.step h2 {
+    color: #000000;
+    margin-bottom: 10px;
+}
+.step p {
+    color: #000000;
+    line-height: 1.5;
+}
+
+.command {
+    color: #0004f3; /* Warna biru untuk perintah */
+}
+
+.notes {
+    margin-top: 40px;
+}
+
+.notes h2 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.notes p {
+    color: #555;
+    line-height: 1.6;
+}
+/* Tambahkan gaya tombol kembali */
+.home-button {
+    display: block;
+    margin-top: 30px;
+    padding: 10px 15px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+    </style>
+    <script>
+        function goHome() {
+    // Ganti URL sesuai dengan halaman utama Anda
+    window.location.href = "materi.html";
+}
+    </script>
+    <title>Konfigurasi IP Address - Debian 8</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>KONFIGURASI IP ADDRESS PADA LINUX DEBIAN 8</h1>
+        </header>
+        
+        <section class="steps">
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 1</h3>
+                    <p>Pastikan login menggunakan akun super user</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 2</h3>
+                    <p>Ketikan perintah <code class="command" >nano /etc/network/interfaces</code> untuk konfigurasi ip address.</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 3</h3>
+                    <p>Ubah ip address menjadi seperti gambar di bawah ini</p>
+                </div>
+                <img src="konfig ip.png" alt="Step 1">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 4</h3>
+                    <p>Setelah semua di ubah lalu save dengan menekan <code class="command">Ctrl+c-y-ENTER</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 5</h3>
+                    <p>Lalu restart network dengan mengetikan perintah <code class="command">/etc/init.d/networking restart</code></p>
+                    <p>atau</p>
+                    <p>Menggunakan perintah <code class="command">service networking restart</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 6</h3>
+                    <p>Periksa apakah konfigurasi ip itu berhasil atau tidak dengan memasukan  perintah <code class="command">ifconfig</code> jika berhasil maka akan seperti ini</p>
+                </div>
+                <img src="ifconfig.png" alt="Step 1">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 7</h3>
+                    <p>Jangan lupa untuk mengganti ip komputer/laptop yang kita gunakan menjadi ip dengan segmen yang sama dengan yang tadi kita konfigurasi pada linux debian</p>
+                    <p>Seperti gambar di bawah ini</p>
+                </div>
+                <img src="network.png" alt="Step 1">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 8</h3>
+                    <p>Setelah ip pada komputer/laptop kita sudah di ubah. Kita bisa test apakah konfigurasi itu berhasil atau tidak</p>
+                    <p>Dengan memasukan perintah <code class="command">ping 192.168.0.2 dan ping 192.168.0.1</code> jika berhasil maka akan seperti ini</p>
+                </div>
+                <img src="ping.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 9</h3>
+                    <p>Selesai! Sekarang IP address pada Debian 8 telah dikonfigurasi.</p>
+                </div>
+            </div>
+        </section>
+
+        <button class="home-button" onclick="goHome()">Back To Materi</button>
+    </div>
+</body>
+</html>

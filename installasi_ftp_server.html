@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style 4.css">
+    <title>Install FTP Server Debian 8</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>INSTALLASI FTP SERVER PADA LINUX DEBIAN 8</h1>
+        </header>
+        
+        <section class="steps">
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 1</h3>
+                    <p>Pastikan login menggunakan akun super user</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 2</h3>
+                    <p>Untuk menginstall FTP ketikan perintah <code class="command" >apt-get install proftpd</code> setelah itu akan muncul dua pilihan, pilihlah <code class="command">standalone</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 3</h3>
+                    <p>Setelah menginstall kita akan buat sebuah user yang akan di gunakan sebagai tempat untuk menyimpan file <code class="command">adduser ftpudin</code> username bisa disesuaikan sesuka kalian</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 4</h3>
+                    <p>Setelah itu restart network dan ftp dengan cara</p>
+                    <p><code class="command">service networking restart</code></p>
+                    <code class="command">service proftpd restart</code>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 5</h3>
+                    <p>Kita akan menguji coba FTP dengan menggunakan aplikasi WinSCP</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 6</h3>
+                    <p>Setelah itu buka WinSCP lalu pada menu file protocol ganti dengan ftp, kemudian di menu hostname ketikan ip kalian, untuk menu username gunakan username yang telah kita buat</p>
+                </div>
+                <img src="win.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 7</h3>
+                    <p>Installasi dan konfigurasi FTP telah berhasil</p>
+                </div>
+                <img src="scp.png" alt="">
+            </div>
+        </section>
+
+        <button class="home-button" onclick="goHome()">Back To Materi</button>
+    </div>
+    <script src="script 2.js"></script>
+</body>
+</html>

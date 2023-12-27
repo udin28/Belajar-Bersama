@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style 3.css">
+    <title>Tutorial Server Debian 8</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Materi Praktek</h1>
+            <h2>(Administrasi Sistem Jaringan)</h2>
+        </header>
+        
+        <section class="menu">
+            <div class="menu-item" onclick="toggleContent('ip-address')">
+                <h2>Konfigurasi IP Address</h2>
+                <div class="content" id="ip-address">
+                    <p>Langkah-langkah untuk mengkonfigurasi IP address pada Debian 8.</p>
+                    <a href="konfigurasi_ip_address_debian8.html"> OPEN</a>
+                </div>
+            </div>
+            
+            <div class="menu-item" onclick="toggleContent('update-repo')">
+                <h2>Update Repository Offline</h2>
+                <div class="content" id="update-repo">
+                    <p>Langkah-langkah untuk melakukan update repository offline pada Debian 8.</p>
+                    <a href="update_repository.html"> OPEN</a>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleContent('install-ssh')">
+                <h2>Installasi SSH Server</h2>
+                <div class="content" id="install-ssh">
+                    <p>Langkah-langkah untuk menginstall SSH server pada Debian 8.</p>
+                    <a href="installasi_ssh_server.html">OPEN</a>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleContent('install-ftp')">
+                <h2>Installasi FTP Server</h2>
+                <div class="content" id="install-ftp">
+                    <p>Langkah-langkah untuk menginstall FTP server pada Debian 8.</p>
+                    <a href="installasi_ftp_server.html">OPEN</a>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleContent('install-samba')">
+                <h2>Installasi File Server</h2>
+                <div class="content" id="install-samba">
+                    <p>Langkah-langkah untuk menginstall File server ( Samba ) pada Debian 8.</p>
+                    <a href="installasi_samba_file_server.html">OPEN</a>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleContent('install-dns')">
+                <h2>Installasi DNS Server</h2>
+                <div class="content" id="install-dns">
+                    <p>Langkah-langkah untuk menginstall DNS ( Bin9 )server pada Debian 8.</p>
+                    <a href="installasi_dns_server.html">OPEN</a>
+                </div>
+            </div>
+
+            <div class="menu-item" onclick="toggleContent('install-web')">
+                <h2>Installasi Web Server</h2>
+                <div class="content" id="install-web">
+                    <p>Langkah-langkah untuk menginstall web server (apache) pada Debian 8.</p>
+                    <a href="installasi_web_server.html">OPEN</a>
+                </div>
+            </div>
+        </section>
+    </div>
+    
+    <button class="home-button" onclick="goHome()">Back To Beranda</button>
+</div>
+    <script src="script.js"></script>
+
+</body>
+</html>

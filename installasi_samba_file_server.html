@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style 4.css">
+    <title>Installasi File server Debian 8</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>INSTALLASI FILE SERVER (SAMBA) PADA LINUX DEBIAN 8</h1>
+        </header>
+        
+        <section class="steps">
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 1</h3>
+                    <p>Pastikan login menggunakan akun super user</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 2</h3>
+                    <p>Buatlah folder user dan share pada direktory home dengan menggunakan perintah <code class="command">mkdir user</code> dan <code class="command">mkdir share</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 3</h3>
+                    <p>Lalu ubah hak akses untuk folder user dan share agar dapat di akses secara full dengan menggunakan perintah <code class="command">chmod 777 user</code> dan <code class="command">chmod 777 share</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 4</h3>
+                    <p>Setelah itu kita akan menginstall file server/samba dengan menggunakan perintah <code class="command">apt-get install samba</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 5</h3>
+                    <p>Jika installasi telah selesai, kita akan mulai mengkonfigurasi file server/samba tersebut dengan menggunakan perintah <code class="command">nano /etc/samba/smb.conf</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 6</h3>
+                    <p>Setelah itu tambahkan syntax dibawah ini pada baris paling bawah pada file smb.conf</p>
+                </div>
+                <img src="us.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 7</h3>
+                    <p>Jika sudah save dengan menekan <code class="command">Ctrl+x-y-ENTER</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 8</h3>
+                    <p>Buat user untuk samba sesuai dengan nama user yang telah kita masukan tadi gunakan perintah</p>
+                    <p><code class="command">adduser user1</code></p>
+                    <p><code class="command">adduser user2</code></p>
+                    <p><code class="command">adduser user3</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 9</h3>
+                    <p>Setelah itu kita akan mendaftarkan user yang baru kita buat ke samba dengan menggunakan perintah</p>
+                    <p><code class="command">smbpasswd -a user1</code></p>
+                    <p><code class="command">smbpasswd -a user2</code></p>
+                    <p><code class="command">smbpasswd -a user3</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 10</h3>
+                    <p>Selanjutnya kita akan merestart network dan file server/samba dengan cara </p>
+                    <p><code class="command">service networking restart</code></p>
+                    <p><code class="command">/etc/init.d/samba restart</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                   <h3>Langkah 11</h3>
+                   <p>Kita bisa melakukan pengujian konfigurasi yang kita lakukan berhasil atau tidak dengan menggunakan perintah <code class="command">testparm</code></p>
+                </div>
+                <img src="testparm.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 12</h3>
+                    <p>Sebelum melakukan pengujian pastikan antara server dan client saling terhubung, selanjutnya buka aplikasi run pada komputer/laptop lalu ketikan ip server masing-masing <code class="command">192.168.0.2 (IP Server)</code></p>
+                </div>
+                <img src="run.png" alt="">
+            </div>
+                    
+                <div class="step">
+                    <div class="step-info">
+                        <h3>Langkah 13</h3>
+                        <p>Proses installasi dan konfigurasi file server/samba pun telah selesai</p>
+            </div>   
+        </section>
+
+        <button class="home-button" onclick="goHome()">Back To Materi</button>
+    </div>
+    <script src="script 2.js"></script>
+</body>
+</html>

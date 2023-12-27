@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style 4.css">
+    <title>Installasi DNS Debian 8</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>INSTALLASI DNS SERVER ( BIND9 ) PADA LINUX DEBIAN 8</h1>
+        </header>
+        
+        <section class="steps">
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 1</h3>
+                    <p>Pastikan login menggunakan akun super user</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 2</h3>
+                    <p>Untuk mengaktifkan fitur DNS server kita membutuhkan sebuah aplikasi yang bernama bind9, untuk menginstall bind9 gunakan perintah <code class="command" >apt-get install bind9</code> ikuti prosesnya hingga selesai</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 3</h3>
+                    <p>Setelah selesai menginstall bind9 selanjutnya ketikan perintah <code class="command">cd /etc/bind</code> untuk masuk kedalam direktory bind</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 4</h3>
+                    <p>Kemudian copy file forward ( untuk mengkonfersi nama domain ke alamat ip ) dan reverse ( mengkonfersi alamat ip ke nama domain ) dengan cara</p>
+                    <p><code class="command">cp db.local db.f-dns</code> ( penulisan nama untuk db.f-dns bisa disesuaikan keinginan kalian )</p>
+                    <p><code class="command">cp db.local db.r-dns</code> ( penulisan nama untuk db.r-dns bisa disesuaikan keinginan kalian )</p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 5</h3>
+                    <p>Lalu masuk ke file db.f-dns dengan menggunakan perintah <code class="command">nano db.f-dns</code> ubah semua tulisan localhost menjadi nama domain kita ( disini saya menggunakan alamat domain udin.com ) kemudian ubah ip yang ada di bawah menjadi ip kita. pada baris terakhir, symbol '@' di ganti dengan 'www', lalu 'AAA' diganti 'A'</p>
+                </div>
+                <img src="db.udin.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 6</h3>
+                    <p>Setelah itu kita masuk juga kedalam file db.r-dns dengan menggunakan perintah <code class="command">nano db.r-dns</code> ubah semua tulisan localhost menjadi nama domain kita, kemudian tambahkan 2 oktet terakhir dari ip kita yang di tulis secara terbalik (dari kanan)</p>
+                </div>
+                <img src="db.192.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 7</h3>
+                    <p>Masuk kedalam file named.conf dengan menggunakan perintah <code class="command">nano named.conf</code> kemudian tambahkan syntax di bawah ini</p>
+                </div>
+                <img src="named.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 8</h3>
+                    <p>Lalu setelah itu masuk ke file resolv.conf <code class="command">nano resolv.conf</code> untuk melihat apakah nama domain dan ip kita sudah ada atau belum</p>
+                </div>
+                <img src="resolv.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 9</h3>
+                    <p>Kemudian restart network dan bind9 dengan cara</p>
+                    <p><code class="command">service networking restart</code></p>
+                    <p><code class="command">service bind9 restart</code></p>
+                </div>
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 10</h3>
+                    <p>Untuk pengujian gunakan perintah <code class="command">nslookup 192.168.0.2</code> dan <code class="command">nslookup domain.com</code></p>
+                </div>
+                <img src="uji.png" alt="">
+            </div>
+            <div class="step">
+                <div class="step-info">
+                    <h3>Langkah 11</h3>
+                    <p>Installasi dan konfigurasi DNS server telah selesai</p>
+                </div>
+            </div>
+        </section>
+
+        <button class="home-button" onclick="goHome()">Back To Materi</button>
+    </div>
+    <script src="script 2.js"></script>
+</body>
+</html>
